@@ -1,0 +1,18 @@
+<!-- sample rectangle -->
+<svg width="300" height="100" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Символ здания + проект -->
+  <path d="M20 80 L20 40 L40 20 L80 20 L100 40 L100 80 Z" fill="none" stroke="#005BAA" stroke-width="3"/>
+  <line x1="20" y1="60" x2="100" y2="60" stroke="#005BAA" stroke-width="2"/>
+  <line x1="40" y1="80" x2="40" y2="60" stroke="#005BAA" stroke-width="2"/>
+  <line x1="60" y1="80" x2="60" y2="60" stroke="#005BAA" stroke-width="2"/>
+  <line x1="80" y1="80" x2="80" y2="60" stroke="#005BAA" stroke-width="2"/>
+  
+  <!-- Элемент "проекта" (чертеж) -->
+  <rect x="110" y="30" width="60" height="40" fill="none" stroke="#ba652a" stroke-width="2"/>
+  <line x1="110" y1="50" x2="170" y2="50" stroke="#FF6D3A" stroke-width="1" stroke-dasharray="5,2"/>
+  <line x1="130" y1="30" x2="130" y2="70" stroke="#FF6D3A" stroke-width="1" stroke-dasharray="5,2"/>
+  
+  <!-- Название -->
+  <text x="180" y="50" font-family="'Arial', sans-serif" font-size="28" fill="#333" font-weight="bold">Проект</text>
+  <text x="180" y="75" font-family="'Arial', sans-serif" font-size="28" fill="#ba652a" font-weight="bold">Строй</text>
+</svg>

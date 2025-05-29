@@ -1,0 +1,10 @@
+<!-- sample rectangle -->
+<svg width="100" height="100" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Символ здания + проект -->
+  <path d="M20 80 L20 40 L40 20 L80 20 L100 40 L100 80 Z" fill="none" stroke="#005BAA" stroke-width="3"/>
+  <line x1="20" y1="60" x2="100" y2="60" stroke="#005BAA" stroke-width="2"/>
+  <line x1="40" y1="80" x2="40" y2="60" stroke="#005BAA" stroke-width="2"/>
+  <line x1="60" y1="80" x2="60" y2="60" stroke="#005BAA" stroke-width="2"/>
+  <line x1="80" y1="80" x2="80" y2="60" stroke="#005BAA" stroke-width="2"/>
+
+</svg>
