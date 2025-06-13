@@ -12,7 +12,7 @@ class ContactController extends Controller
     {
         return view('contact');
     }
-    
+
     public function submit(Request $request)
     {
         $validated = $request->validate([

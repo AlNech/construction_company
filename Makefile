@@ -4,14 +4,16 @@ php-fpm := $(dc) exec php-fpm
 node := $(dc) exec node
 mysql := $(dc) exec mysql
 
-
-
+up:
+	$(dc) up -d
+down:
+	$(dc) down
 cli:
 	$(php-cli) bash
 
 fpm:
-	$(php-fpm) bash	
-	
+	$(php-fpm) bash
+
 mysql:
 	$(mysql) bash
 

@@ -43,8 +43,8 @@ class AdminNewsController extends Controller
         ]);
 
         $validated['slug'] = Str::slug($validated['title']);
-        $validated['is_published'] = $request->has('is_published')  ? 1 : 0;
-        
+        $validated['is_published'] = $request->has('is_published') ? 1 : 0;
+
         News::create($validated);
 
         return redirect()->route('admin.news.index')
@@ -82,7 +82,7 @@ class AdminNewsController extends Controller
         ]);
 
         $validated['slug'] = Str::slug($validated['title']);
-        $validated['is_published'] = $request->has('is_published')  ? 1 : 0;
+        $validated['is_published'] = $request->has('is_published') ? 1 : 0;
 
         $news->update($validated);
 

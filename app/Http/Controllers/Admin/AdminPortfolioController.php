@@ -16,10 +16,10 @@ class AdminPortfolioController extends Controller
      */
     public function index()
     {
-         $portfolios = Portfolio::with('service') 
+        $portfolios = Portfolio::with('service')
             ->orderBy('sort_order')
             ->paginate(10);
-        
+
         return view('admin.portfolio.index', compact('portfolios'));
     }
 
@@ -50,14 +50,14 @@ class AdminPortfolioController extends Controller
             'sort_order' => 'nullable|integer',
             'is_active' => 'boolean'
         ]);
-       
+
         // Генерация slug, если не указан
         if (empty($validated['slug'])) {
             $validated['slug'] = Str::slug($validated['title']);
         }
         // Обработка изображений
         $imageUrls = array_filter($request->input('images', []));
-        
+
         // Сохраняем портфолио
         $validated['images'] = json_encode(array_values($imageUrls));
 
@@ -81,7 +81,7 @@ class AdminPortfolioController extends Controller
     public function edit(Portfolio $portfolio)
     {
         $services = Service::where('is_active', Service::IS_ACTIVE)->get();
-        return view('admin.portfolio.edit', compact('portfolio','services'));
+        return view('admin.portfolio.edit', compact('portfolio', 'services'));
     }
 
     /**
@@ -91,7 +91,7 @@ class AdminPortfolioController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|string|max:255',
-            'slug' => 'required|string|max:255|unique:portfolios,slug,'.$portfolio->id,
+            'slug' => 'required|string|max:255|unique:portfolios,slug,' . $portfolio->id,
             'service_id' => 'required|exists:services,id',
             'short_description' => 'nullable|string|max:300',
             'description' => 'required|string',
@@ -102,8 +102,8 @@ class AdminPortfolioController extends Controller
             'sort_order' => 'nullable|integer',
             'is_active' => 'boolean'
         ]);
-        
-         // Обработка изображений
+
+        // Обработка изображений
         $imageUrls = array_filter($request->input('images', []));
 
         // Сохраняем портфолио

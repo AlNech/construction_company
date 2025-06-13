@@ -24,17 +24,6 @@ use App\Http\Controllers\Admin\AdminApplicationController;
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-
 // Главная
 Route::get('/', [MainController::class, 'index'])->name('main');
 
@@ -57,8 +46,8 @@ Route::post('/contact', [ContactController::class, 'submit'])->name('contact.sub
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
-    
-     // Услуги
+
+    // Услуги
     Route::resource('/admin/services', AdminServiceController::class)->names([
         'index' => 'admin.services.index',
         'create' => 'admin.services.create',
@@ -69,8 +58,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
         'destroy' => 'admin.services.destroy'
     ]);
 
-     // Портфолио
-     Route::resource('/admin/portfolio', AdminPortfolioController::class)->names([
+    // Портфолио
+    Route::resource('/admin/portfolio', AdminPortfolioController::class)->names([
         'index' => 'admin.portfolio.index',
         'create' => 'admin.portfolio.create',
         'store' => 'admin.portfolio.store',
@@ -79,9 +68,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
         'update' => 'admin.portfolio.update',
         'destroy' => 'admin.portfolio.destroy'
     ]);
-    
-     // Новости
-     Route::resource('/admin/news', AdminNewsController::class)->names([
+
+    // Новости
+    Route::resource('/admin/news', AdminNewsController::class)->names([
         'index' => 'admin.news.index',
         'create' => 'admin.news.create',
         'store' => 'admin.news.store',
@@ -90,11 +79,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
         'update' => 'admin.news.update',
         'destroy' => 'admin.news.destroy'
     ]);
-    
-     // Обратная связь(заявки)
-     Route::get('/admin/applications', [AdminApplicationController::class, 'index'])->name('admin.applications.index');
-      Route::get('/applications/{application}', [AdminApplicationController::class, 'show'])->name('admin.applications.show');
-     Route::put('/admin/applications/{application}/mark-as-processed', [AdminApplicationController::class, 'markAsProcessed'])->name('applications.markAsProcessed');
+
+    // Обратная связь(заявки)
+    Route::get('/admin/applications', [AdminApplicationController::class, 'index'])->name('admin.applications.index');
+    Route::get('/applications/{application}', [AdminApplicationController::class, 'show'])->name('admin.applications.show');
+    Route::put('/admin/applications/{application}/mark-as-processed', [AdminApplicationController::class, 'markAsProcessed'])->name('applications.markAsProcessed');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

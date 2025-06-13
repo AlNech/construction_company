@@ -9,12 +9,12 @@ class News extends Model
 {
     const PUBLISHED = 1;
     const NON_PUBLISHED = 0;
-    
+
     use HasFactory;
 
     protected $fillable = [
-        'title', 
-        'slug', 
+        'title',
+        'slug',
         'excerpt',
         'content',
         'image',

@@ -10,13 +10,13 @@ class Application extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 
-        'phone', 
+        'name',
+        'phone',
         'email',
         'message',
         'is_processed'
     ];
-    
+
     protected $casts = [
         'is_processed' => 'boolean'
     ];

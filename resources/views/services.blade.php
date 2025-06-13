@@ -21,9 +21,9 @@
                 <?php foreach ($services as $service): ?>
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="<?= htmlspecialchars($service['image']) ?>" 
-                            alt="<?= htmlspecialchars($service['title']) ?>" 
-                            loading="lazy">
+                        <img src="<?= htmlspecialchars($service['image']) ?>"
+                             alt="<?= htmlspecialchars($service['title']) ?>"
+                             loading="lazy">
                         <div class="service-icon">
                             <i class="fas <?= htmlspecialchars($service['icon']) ?>"></i>
                         </div>
@@ -31,7 +31,7 @@
                     <div class="service-content">
                         <h3><?= htmlspecialchars($service['title']) ?></h3>
                         <p><?= htmlspecialchars($service['short_description']) ?></p>
-                       <button class="btn details-btn" 
+                        <button class="btn details-btn"
                                 data-title="{{ $service['title'] }}"
                                 data-image="{{ $service['image'] }}"
                                 data-description="{{ $service['description'] }}">
@@ -40,11 +40,11 @@
                     </div>
                 </div>
                 <?php endforeach; ?>
-                
-        </div>
+
+            </div>
     </section>
 
-     <!-- Модальное окно -->
+    <!-- Модальное окно -->
     <div class="modal-overlay" id="serviceModal">
         <div class="modal-container">
             <button class="modal-close" id="modalClose">&times;</button>
@@ -55,35 +55,35 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Получаем все кнопки "Подробнее"
             const detailButtons = document.querySelectorAll('.details-btn');
             const modal = document.getElementById('serviceModal');
             const modalClose = document.getElementById('modalClose');
-            
+
             // Обработчик для кнопок "Подробнее"
             detailButtons.forEach(button => {
-                button.addEventListener('click', function() {
+                button.addEventListener('click', function () {
                     // Заполняем модальное окно данными
                     document.getElementById('modalTitle').textContent = this.dataset.title;
                     document.getElementById('modalImage').src = this.dataset.image;
                     document.getElementById('modalImage').alt = this.dataset.title;
                     document.getElementById('modalContent').innerHTML = this.dataset.description;
-                    
+
                     // Показываем модальное окно
                     modal.style.display = 'flex';
                     document.body.style.overflow = 'hidden';
                 });
             });
-            
+
             // Закрытие модального окна
-            modalClose.addEventListener('click', function() {
+            modalClose.addEventListener('click', function () {
                 modal.style.display = 'none';
                 document.body.style.overflow = 'auto';
             });
-            
+
             // Закрытие при клике вне модального окна
-            modal.addEventListener('click', function(e) {
+            modal.addEventListener('click', function (e) {
                 if (e.target === modal) {
                     modal.style.display = 'none';
                     document.body.style.overflow = 'auto';
@@ -94,4 +94,4 @@
 @endsection
 
 
-    
+

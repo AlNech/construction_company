@@ -23,7 +23,7 @@ class Service extends Model
         'icon'
     ];
 
-     protected $casts = [
+    protected $casts = [
         'is_active' => 'boolean',
         'sort_order' => 'integer'
     ];

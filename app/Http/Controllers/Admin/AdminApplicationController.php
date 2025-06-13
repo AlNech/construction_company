@@ -13,7 +13,7 @@ class AdminApplicationController extends Controller
         $applications = Application::orderBy('created_at', 'desc')->paginate(10);
         return view('admin.applications.index', compact('applications'));
     }
-    
+
     public function show(Application $application)
     {
         return view('admin.applications.show', compact('application'));
@@ -23,6 +23,6 @@ class AdminApplicationController extends Controller
     {
         $application->update(['is_processed' => true]);
         return redirect()->route('admin.applications.index')
-                         ->with('success', 'Заявка помечена как обработанная');
+            ->with('success', 'Заявка помечена как обработанная');
     }
 }
