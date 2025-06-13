@@ -44,11 +44,12 @@
                                 </button>
                             </div>
                         </div>
+                    @endif
+                @endforeach
             </div>
-            @endif
-            @endforeach
+
         </div>
-        </div>
+
     </section>
 
 
