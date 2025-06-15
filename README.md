@@ -15,14 +15,14 @@
 ## 🚀 Quick Start
 ### Prerequisites
 ```
-        Docker & Docker Compose
-        Git
+Docker & Docker Compose
+Git
 ```
 ### Installation
 ```
-    git clone https://github.com/AlNech/construction_company.git
-    cd construction_company
-    make init
+git clone https://github.com/AlNech/construction_company.git
+cd construction_company
+make init
 ```
 
 ## ⚙️ Makefile Commands
