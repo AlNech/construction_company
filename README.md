@@ -1,28 +1,24 @@
 # Web-Site Construction Company - Admin Panel (Laravel + MySQL)
-=========
 
 ## ✨ Features
-----------
 * Admin panel for managing website content
 * Admin authentication system
 * Database migrations and seeding
 * Dockerized development environment
 
 ## Default Admin Credentials
-----------
+```
 🔑 Login: admin
 🔒 Password: password
+```
 
 ## 🚀 Quick Start
-----------
 ### Prerequisites
--
     ```
         Docker & Docker Compose
         Git
     ```
 ### Installation
--
     ```
     git clone https://github.com/AlNech/construction_company.git
     cd construction_company
@@ -30,7 +26,6 @@
     ```
 
 ## ⚙️ Makefile Commands
-----------
 | Command                 | Description                                                        |
 |-------------------------|-----------------------------------------------------------------|
 | `make init`             | Full setup (up + deps + db)                                 |
@@ -47,7 +42,6 @@
 | `make mysql`     | Access MySQL database                                                 |
 
 ## 🌐 Access
-----------
 After installation:
 ```
     Website: http://localhost:8080
